@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Mapbox Map </title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+<!-- <style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>*/ -->
+<style type='text/css'>
+  .my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+  .my-legend .legend-scale ul {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .my-legend .legend-scale ul li {
+    font-size: 80%;
+    list-style: none;
+    margin-left: 0;
+    line-height: 18px;
+    margin-bottom: 2px;
+    }
+  .my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 5px;
+    margin-left: 0;
+    border: 1px solid #999;
+    }
+  .my-legend .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }
+  .my-legend a {
+    color: #777;
+    }
+    h1 {
+      text-align: center;
+    }
+</style>
+</head>
+<body>
+<div id="map"style="width: 1900px; height: 600px;"></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoic3VkYW1mZXJuYW5kbyIsImEiOiJja20xb2M4Ymowa2l4MnhxdG54em4xcWtzIn0.LJjx0EIijx9z2l618Z4V-w';
+var map = new mapboxgl.Map({
+container: 'map', // container id
+style: 'mapbox://styles/sudamfernando/ckm334d1m5kka17qk0yvvlymd', // style URL
+center: [-114.0719,51.0447], // starting position [lng, lat]
+zoom: 11 // starting zoom
+});
+</script>
+<h1> Welcome to the Mapbox Map !</h1>
+<div class = "info"> Click the links below to be taken to Open Street Map ! </div>
+
+<div class = "row" >
+  <div class "col-lg-3 col-sm-6">   <a class="btn btn-primary" href="index.html" role="button">OSM map</a></div>
+</div>
+
+<div class='my-legend'>
+<div class='legend-title'>The Color map of the taffic incidents</div>
+<div class='legend-scale'>
+  <ul class='legend-labels'>
+    <li><span style='background:#ec0404;'></span>Multiple Crashes</li>
+    <li><span style='background:#439414;'></span>Two Vehicle Crashes</li>
+    <li><span style='background:#fcf8fb;'></span>All other collisions</li>
+  </ul>
+</div>
+<div class='legend-source'>Source: <a href="#link to source">Name of source</a></div>
+</div>
+
+</body>
+</html>
